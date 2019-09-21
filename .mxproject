@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/ktera/Atollic/TrueSTUDIO/STM32_workspace_9.3/main_ver3.tar.gz_expanded/main_ver3/Inc
+HeaderPath=C:/Users/ktera/Atollic/TrueSTUDIO/STM32_workspace_9.3/main_stm.tar.gz_expanded/main_stm/Inc
 HeaderFiles=stm32f3xx_it.h;stm32f3xx_hal_conf.h;main.h;
-SourcePath=C:/Users/ktera/Atollic/TrueSTUDIO/STM32_workspace_9.3/main_ver3.tar.gz_expanded/main_ver3/Src
+SourcePath=C:/Users/ktera/Atollic/TrueSTUDIO/STM32_workspace_9.3/main_stm.tar.gz_expanded/main_stm/Src
 SourceFiles=stm32f3xx_it.c;stm32f3xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
