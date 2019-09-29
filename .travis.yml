@@ -7,7 +7,7 @@ install:
   - sudo apt-get update -y
   - cd $HOME/Downloads/Atollic
   - |-
-    if [[ ! -e $HOME/Downloads/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz ]]; then 
+    if [[ ! -e $(pwd)/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz ]]; then 
       sudo apt-get install -y curl
       curl -LO http://download.atollic.com/TrueSTUDIO/installers/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz
     fi
