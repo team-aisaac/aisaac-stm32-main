@@ -2,14 +2,18 @@ sudo: required
 launguage: generic
 cache:
   directories:
-    - /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0
+    - $HOME/Downloads/Atollic
 install:
-  - sudo apt-get update -y
-  - sudo apt-get install -y curl
-  - if [[ ! -d /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide ]]; then curl -LO http://download.atollic.com/TrueSTUDIO/installers/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz; fi
-  - if [[ ! -d /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide ]]; then tar -xvf Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz; fi
-  - if [[ ! -d /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide ]]; then cd ./Atollic_TrueSTUDIO_for_STM32_9.3.0_installer; fi
-  - if [[ ! -d /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide ]]; then yes 1 | sudo ./install.sh; fi
+  - |-
+    sudo apt-get update -y
+    cd $HOME/Downloads/Atollic
+    if [[ ! -e $HOME/Downloads/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz ]]; then 
+      sudo apt-get install -y curl
+      curl -LO http://download.atollic.com/TrueSTUDIO/installers/Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz; 
+    fi
+    tar -xvf Atollic_TrueSTUDIO_for_STM32_linux_x86_64_v9.3.0_20190212-0734.tar.gz
+    cd ./Atollic_TrueSTUDIO_for_STM32_9.3.0_installer
+    yes 1 | sudo ./install.sh
 script:
   - cd /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide/
   - ./headless.sh -data $HOME/workspace -import $TRAVIS_BUILD_DIR -build main_stm/Debug
